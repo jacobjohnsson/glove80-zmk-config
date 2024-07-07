@@ -17,7 +17,8 @@
 #define DEFAULT 0
 #define LOWER 1
 #define MAGIC 2
-#define FACTORY_TEST 3
+#define SYMBOLS 3
+#define FACTORY_TEST 4
 
 / {
     behaviors {
@@ -111,8 +112,8 @@
             &kp F1         &kp F2      &kp F3      &kp F4       &kp F5                                                                                   &kp F6        &kp F7        &kp F8       &kp F9      &kp F10
             &kp EQUAL      &kp N1      &kp N2      &kp N3       &kp N4        &kp N5                                                                     &kp N6        &kp N7        &kp N8       &kp N9      &kp N0            &kp MINUS
             &kp TAB        &kp Q       &kp W       &kp E        &kp R         &kp T                                                                      &kp Y         &kp U         &kp I        &kp O       &kp P             &kp BSLH
-            &kp ESC        &bhm LGUI A &bhm LALT S &bhm LCTRL D &bhm LSHIFT F &kp G                                                                      &kp H         &bhm RSHIFT J &bhm RCTRL K &bhm LALT L &bhm LGUI SEMI    &kp SQT
-            &kp GRAVE      &kp Z       &kp X       &kp C        &kp V         &kp B   &kp LSHFT   &kp LCTRL   &layer_td  &kp LGUI  &kp RCTRL &kp RSHFT   &kp N         &kp M         &kp COMMA    &kp DOT     &kp FSLH          &kp PG_UP
+            &kp ESC        &bhm LGUI A &bhm LALT S &bhm LCTRL D &bhm LSHIFT F &kp G                                                                      &kp H         &bhm RSHIFT J &bhm RCTRL K &bhm RALT L &bhm LGUI SEMI    &kp SQT
+            &kp GRAVE      &kp Z       &kp X       &kp C        &kp V         &kp B   &mo SYMBOLS &kp LCTRL   &layer_td  &kp LGUI  &kp RCTRL &kp RSHFT   &kp N         &kp M         &kp COMMA    &kp DOT     &kp FSLH          &kp PG_UP
             &magic MAGIC 0 &kp HOME    &kp END     &kp LEFT     &kp RIGHT             &kp SPACE   &kp DEL     &kp LALT   &kp RALT  &kp RET   &kp BSPC                  &kp UP        &kp DOWN     &kp LBKT    &kp RBKT          &kp PG_DN
             >;
         };
@@ -136,6 +137,17 @@
             &bootloader       &rgb_ug RGB_SPD     &rgb_ug RGB_SAD &rgb_ug RGB_HUD &rgb_ug RGB_BRD &rgb_ug RGB_EFF                                                                      &none      &none      &none      &none      &none      &bootloader
             &sys_reset        &none               &none           &none           &none           &none           &bt_2     &bt_3     &none            &none     &none     &none       &none      &none      &none      &none      &none      &sys_reset
             &none             &none               &none           &none           &none                           &bt_0     &bt_1     &out OUT_USB     &none     &none     &none                  &none      &none      &none      &none      &to FACTORY_TEST
+            >;
+        };
+        
+        symbol_layer {
+            bindings = <
+            &trans        &trans        &trans        &trans        &trans                                                                                                  &trans        &trans        &trans        &trans        &trans
+            &trans        &trans        &trans        &trans        &trans        &trans                                                                      &trans        &trans        &trans        &trans        &trans        &trans
+            &trans        &trans        &kp LPAR      &kp RPAR      &kp DQT       &kp AMPERSAND                                                               &kp LBRC      &kp RBRC      &kp LBKT      &kp RBKT      &trans        &trans
+            &trans        &kp N1        &kp N2        &kp N3        &kp N4        &kp N5                                                                      &kp N6        &kp N7        &kp N8        &kp N9        &kp N0        &trans
+            &trans        &trans        &trans        &trans        &trans        &trans          &trans   &trans  &trans   &trans   &trans   &trans          &trans        &trans        &trans        &trans        &trans        &trans
+            &trans        &trans        &trans        &trans        &trans                                                                                    &trans        &trans        &trans        &trans        &trans
             >;
         };
 
